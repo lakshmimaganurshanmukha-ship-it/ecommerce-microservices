@@ -54,10 +54,10 @@ public class Controller {
 		return service.placeOrder(tokenValidator.getClaimId(token));		  
 	}
 	
-//	@GetMapping("/{userid}/viewcart/viewitems") //To show only the added cart items 
-//	public List<CartItem> getCartItems(@PathVariable long userid){
-//		return service.getCartItems(userid);
-//	}
+	@GetMapping("/{userid}/viewcart/viewitems") //To show only the added cart items 
+	public List<CartItem> getCartItems(@PathVariable long userid){
+		return service.getCartItems(userid);
+	}
 	
 	@PreAuthorize("hasRole('USER')")
 	@PostMapping("/{userid}/additems") //Add item to cart
