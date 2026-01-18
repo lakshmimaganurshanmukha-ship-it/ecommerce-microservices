@@ -38,15 +38,13 @@ public class JwtFilter extends OncePerRequestFilter {
 			Long userId = tokenValidater.getClaimId(token); // getting our id,role by parsing token
 			String role = tokenValidater.getClaimRole(token);
             
-			// this is assigning roles
+		
 			UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(userId, null,
 					List.of(new SimpleGrantedAuthority("ROLE_" + role)));
-			// adds extra information here we added: request details
+		
 			authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 
-			// storing our authentication token in our spring security context
-			// @PreAuthorize detects this specific role from token which we stored in spring
-			// security context
+			
 			SecurityContextHolder.getContext().setAuthentication(authToken);
 
 		}
