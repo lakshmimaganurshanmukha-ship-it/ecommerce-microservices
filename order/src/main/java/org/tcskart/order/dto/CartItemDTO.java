@@ -10,7 +10,7 @@ public class CartItemDTO {
 	    private Integer quantity;
 	    private Long amount;
 
-//		}
+
 	}
 
 
