@@ -36,7 +36,7 @@ public class Order{
 
     private LocalDateTime orderDate = LocalDateTime.now();
 
-//    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-//    private List<OrderItem> items  = new ArrayList<>();
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+   private List<OrderItem> items  = new ArrayList<>();
 	
 }
